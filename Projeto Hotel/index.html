@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Estoque Inteligente</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topo-wrapper">
+  <span class="menu-icon" onclick="openNav()">&#9776;</span>
+  <div class="topo-logo">
+    <img src="Captura de tela 2025-09-15 012050.png" alt="Logo" />
+  </div>
+</div>
+
+<div class="theme-switcher">
+  <select id="themeSelector" onchange="alterarTema(this.value)">
+    <option value="neutro">🎨</option> 
+    <option value="escuro">🌙</option>
+  </select>
+</div>
+
+<span class="menu-icon" onclick="openNav()">&#9776;</span>
+
+<div id="mySidenav" class="sidenav">
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="#" onclick="mostrarSecao('exportar')">📥 Baixar Planilha</a>
+  <a href="#" onclick="mostrarSecao('controleEntradaSaida')">📊 Controle de Entrada e Saída</a>
+  <a href="relatorio.html">📅 Relatório Mensal</a>
+  <hr style="border:1px solid #444;">
+  <a href="#" id="admin-link" style="display: none;" onclick="mostrarSecao('admin')">👤 Administrador</a>
+</div>
+
+<div class="container">
+
+  <h2 class="titulo-principal">📦 Meu Estoque Inteligente</h2>
+
+  <div id="secaoImportacao">
+    <h3>Importar Planilha</h3>
+    <div class="input-group">
+      <input type="file" id="arquivoXLS" accept=".xlsx, .xls">
+      <button onclick="importarArquivo()">Importar Planilha</button>
+    </div>
+  </div>
+
+  <div id="exportar" class="hidden-section">
+    <h3>Exportar Planilha</h3>
+    <div class="input-group">
+      <button onclick="exportarArquivo()">Baixar Planilha</button>
+    </div>
+  </div>
+
+  <div id="controleEntradaSaida" class="hidden-section">
+    <button class="fechar-aba" onclick="fecharControle()">×</button>
+    <h3>Controle de Entrada e Saída</h3>
+    <div id="produtoEditadoInfo" class="produto-edit-info"></div>
+    <div id="mensagemRegistro" class="mensagem-registro"></div>
+    <div class="input-group">
+      <label for="quantidadeEntrada">Quantidade Entrada:</label>
+      <input type="number" id="quantidadeEntrada" min="1">
+      <label for="quantidadeSaida">Quantidade Saída:</label>
+      <input type="number" id="quantidadeSaida" min="1">
+      <button onclick="registrarMovimento()">Registrar Movimento</button>
+    </div>
+  </div>
+
+  <div id="historicoMensal" class="hidden-section">
+    <div id="produtoSelecionadoInfo" class="produto-info"></div>
+    <h4>Controle Mensal</h4>
+    <div id="infoProdutoSelecionado" style="margin-bottom: 10px; font-weight: bold;"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Mês</th>
+          <th>Entradas</th>
+          <th>Saídas</th>
+        </tr>
+      </thead>
+      <tbody id="historicoTabela"></tbody>
+    </table>
+  </div> 
+
+  <!-- 🔍 Campo de busca moderno -->
+  <div class="buscar-container">
+    <input type="text" id="buscarProduto" placeholder="🔍 Buscar produto...">
+  </div>
+
+  <div id="resultadosImportados" class="hidden-section">
+    <h4>Resultados da Busca</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Estoque</th>
+          <th>Status</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaImportados"></tbody>
+    </table>
+  </div>
+
+  <div class="tabela-container">
+    <table id="tabelaEstoque"> 
+      <thead> 
+        <tr> 
+          <th>ID</th> 
+          <th>Nome</th> 
+          <th>Categoria</th> 
+          <th>Estoque Atual</th> 
+          <th>Status</th> 
+          <th>Observações</th> 
+          <th>Ação</th> 
+        </tr> 
+      </thead> 
+      <tbody></tbody> 
+    </table> 
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="cod.js"></script>
+</body>
+</html>

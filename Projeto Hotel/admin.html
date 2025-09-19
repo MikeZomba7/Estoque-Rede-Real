@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Administrador</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Painel do Administrador</h1>
+    <span id="userInfo">👤 Admin</span>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Gerenciar Usuários</h2>
+      <div class="input-group">
+        <label for="novoUsuario">Nome do Novo Usuário:</label>
+        <input type="text" id="novoUsuario" placeholder="Digite o nome do usuário">
+      </div>
+
+      <div class="input-group">
+        <label for="permissoes">Permissões:</label>
+        <select id="permissoes">
+          <option value="lancar">Lançar Produto</option>
+          <option value="retirar">Retirar Produto</option>
+          <option value="visualizar">Somente Visualizar</option>
+        </select>
+      </div>
+      
+      <button class="btn-primary" onclick="criarUsuario()">➕ Criar Usuário</button>
+    </section>
+
+    <section class="card">
+      <h2>Lista de Usuários</h2>
+      <ul id="listaUsuarios"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 - Painel Administrativo</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório Mensal de Estoque</title>
+  <link rel="stylesheet" href="relatorio.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Relatório Mensal de Estoque</h2>
+
+    <div class="input-group">
+      <label for="dataInicio">Data Início:</label>
+      <input type="date" id="dataInicio">
+      <label for="dataFim">Data Fim:</label>
+      <input type="date" id="dataFim">
+      <button onclick="filtrarRelatorio()">Filtrar</button>
+    </div>
+
+    <table id="tabelaRelatorio">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Categoria</th>
+          <th>Estoque Atual</th>
+          <th>Status</th>
+          <th>Entradas</th>
+          <th>Saídas</th>
+          <th>Última Modificação</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="relatorio.js"></script>
+</body>
+</html>

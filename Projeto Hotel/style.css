@@ -1,0 +1,948 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 0;
+    color: #4b5563;
+}
+
+h2, h3 {
+    color: #10b981;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h4 {
+    margin-bottom: 10px;
+    color: #374151;
+    font-weight: 500;
+}
+   .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 15px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #333;
+    }
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #222;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+    .sidenav a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #f1f1f1;
+      display: block;
+      transition: 0.2s;
+    }
+    .sidenav a:hover {
+      background: #575757;
+    }
+    .sidenav .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #f1f1f1;
+    }
+    .container {
+      padding-top: 70px;
+    }
+    .hidden-section {
+      display: none;
+    }
+    .input-group {
+      margin: 10px 0;
+    }
+    .input-group label {
+      display: block;
+      margin: 5px 0;
+    }
+
+.container {
+    max-width: 12000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-top: 0%;
+}
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+
+.input-group {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #6b7280;
+    min-width: 120px;
+}
+
+.input-group input, .input-group button {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.input-group button {
+    background-color: #10b981;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.input-group button:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+/* Container da tabela, com margem e alinhamento à esquerda */
+.tabela-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px 0 0 30px;
+    overflow-x: auto;
+}
+
+/* Estilo geral da tabela */
+#tabelaEstoque {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: auto;
+}
+
+/* Cabeçalho */
+#tabelaEstoque thead {
+    background-color: #10b981;
+    color: white;
+}
+
+#tabelaEstoque th {
+    padding: 14px 10px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+/* Corpo da tabela */
+#tabelaEstoque td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+/* Hover em linha */
+#tabelaEstoque tbody tr:hover {
+    background-color: #ecfdf5;
+}
+
+/* Botões de ação */
+#tabelaEstoque .btn-acao {
+    padding: 6px 12px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#tabelaEstoque .btn-acao:hover {
+    background-color: #059669;
+}
+
+/* 🌙 Modo escuro */
+body.tema-escuro #tabelaEstoque {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+body.tema-escuro #tabelaEstoque th {
+    background-color: #059669;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
+}
+
+body.tema-escuro #tabelaEstoque td {
+    border: 1px solid #4b5563;
+    color: #f3f4f6;
+}
+
+body.tema-escuro #tabelaEstoque tbody tr:hover {
+    background-color: #6b7280;
+}
+
+body.tema-escuro #tabelaEstoque .btn-acao {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+body.tema-escuro #tabelaEstoque .btn-acao:hover {
+    background-color: #059669;
+}
+
+/* ============================= */
+/*     TABELA-CONTAINER ESTILO   */
+/* ============================= */
+
+/* Container da tabela */
+.tabela-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;       /* fundo claro padrão */
+    border-radius: 25px;             /* cantos bem arredondados */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08); /* efeito abaulado */
+    transition: all 0.3s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* fonte elegante */
+}
+
+/* Tabela interna */
+.tabela-container table {
+    width: 100%;
+    border-collapse: separate; /* remove linhas pesadas */
+    border-spacing: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: inherit;  /* pega o fundo do container */
+    border-radius: 20px;        /* bordas arredondadas internas */
+    overflow: hidden;
+}
+
+/* Cabeçalho da tabela */
+.tabela-container table thead {
+    background-color: #10b981; /* verde padrão do tema */
+    color: white;
+    font-weight: 700;
+}
+
+.tabela-container table th {
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Corpo da tabela */
+.tabela-container table td {
+    padding: 14px;
+    text-align: center;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb; /* linhas suaves entre as células */
+    font-size: 15px;
+}
+
+/* Hover em linhas */
+.tabela-container table tbody tr:hover {
+    background-color: #ecfdf5;
+    transition: background-color 0.2s ease;
+}
+
+/* Botões dentro da tabela */
+.tabela-container table .btn-acao {
+    padding: 6px 14px;
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+}
+
+.tabela-container table .btn-acao:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/*       MODO ESCURO             */
+body.tema-escuro .tabela-container {
+    background-color: #1f2937;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+body.tema-escuro .tabela-container table {
+    background-color: inherit;
+    color: #f3f4f6;
+}
+
+body.tema-escuro .tabela-container table thead {
+    background-color: #059669;
+    color: #f3f4f6;
+}
+
+body.tema-escuro .tabela-container table td {
+    color: #f3f4f6;
+    border-bottom: 1px solid #4b5563;
+}
+
+body.tema-escuro .tabela-container table tbody tr:hover {
+    background-color: #4b5563;
+}
+
+
+
+
+
+
+th, td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #10b981;
+    color: white;
+    font-weight: 600;
+}
+
+body:not(.tema-escuro) tr:hover {
+    background-color: #f9fafb;
+}
+
+body.tema-escuro tr:hover {
+    background-color: #4b5563; 
+}
+
+
+tr:last-child {
+    border-bottom: none;
+}
+.action-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    /* ✅ Ajuste de tamanho fixo */
+    width: 80px;       /* largura fixa igual para todos */
+    height: 35px;      /* altura fixa igual para todos */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.action-buttons .edit-btn {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.action-buttons .edit-btn:hover {
+    background-color: #2563eb;
+}
+
+.action-buttons .delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.action-buttons .delete-btn:hover {
+    background-color: #dc2626;
+}
+
+input[type="text"], input[type="number"], input[type="file"] {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+#controleEntradaSaida, #historicoMensal {
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    margin-top: 25px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#controleEntradaSaida .input-group, #historicoMensal table {
+    margin: 0;
+}
+
+#historicoMensal th, #historicoMensal td {
+    padding: 15px;
+}
+
+/* Adicionando Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Botão no canto superior direito */
+.theme-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10; /* Garante que fique acima do fundo verde ou da imagem */
+}
+
+.theme-switcher select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #555050;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #747577;
+  color: white;
+}
+
+body.tema-escuro .theme-switcher select {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+/* Tema Escuro */
+body.tema-escuro {
+    background-color: #111827;
+    color: #3f4041;
+}
+
+body.tema-escuro .container {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+body.tema-escuro table {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+body.tema-escuro th {
+    background-color: #059669;
+}
+/* ============================= */
+/* HISTÓRICO MENSAL - CORRIGIDO */
+/* ============================= */
+
+#historicoMensal {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    font-family: 'Helvetica', sans-serif;
+    overflow-x: auto;
+}
+
+/* Tabela interna */
+#historicoMensal table {
+    width: 100%;
+    border-collapse: collapse; /* fundamental para JS manipular linhas */
+    background-color: inherit;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Cabeçalho */
+#historicoMensal thead {
+    background-color: #10b981;
+    color: white;
+    font-weight: 700;
+}
+
+#historicoMensal th {
+    padding: 18px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Corpo da tabela */
+#historicoMensal td {
+    padding: 16px;
+    text-align: center;
+    font-size: 15px;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Hover nas linhas */
+#historicoMensal tbody tr:hover {
+    background-color: #ecfdf5;
+}
+
+/* Botões dentro da tabela */
+#historicoMensal .btn-acao {
+    padding: 6px 14px;
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+}
+
+#historicoMensal .btn-acao:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/*           MODO ESCURO         */
+/* ============================= */
+body.tema-escuro #historicoMensal {
+    background-color: #1f2937;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+body.tema-escuro #historicoMensal table {
+    background-color: inherit;
+    color: #f3f4f6;
+}
+
+body.tema-escuro #historicoMensal thead {
+    background-color: #059669;
+    color: #f3f4f6;
+}
+
+body.tema-escuro #historicoMensal td {
+    color: #f3f4f6;
+    border-bottom: 1px solid #4b5563;
+}
+
+body.tema-escuro #historicoMensal tbody tr:hover {
+    background-color: #4b5563;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #historicoMensal th, #historicoMensal td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+
+/* Menu lateral padrão */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  background-color: #f3f4f6; /* tema claro padrão */
+}
+
+.sidenav a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: 0.2s;
+  color: #111827; /* texto no claro */
+}
+
+.sidenav a:hover {
+  background-color: #d1fae5; /* verde claro ao passar o mouse */
+  color: #065f46;            /* verde escuro no hover */
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #111827;
+}
+
+/* Menu no modo escuro */
+body.tema-escuro .sidenav {
+  background-color: #1f2937;
+}
+
+body.tema-escuro .sidenav a {
+  color: #f3f4f6;
+}
+
+body.tema-escuro .sidenav a:hover {
+  background-color: #065f46;
+  color: #d1fae5;
+}
+
+body.tema-escuro .sidenav .closebtn {
+  color: #f3f4f6;
+}
+
+.container {
+    padding-top: 70px;
+}
+.hidden-section {
+    display: none;
+}
+.input-group {
+    margin: 10px 0;
+}
+.input-group label {
+    display: block;
+    margin: 5px 0;
+}
+.topo-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.topo-logo img {
+  max-width: 200px; /* ou qualquer tamanho desejado */
+  height: auto;
+}
+/* Controle Mensal no modo escuro */
+body.tema-escuro #historicoMensal {
+    background-color: #374151; /* fundo escuro para o card */
+    color: #f3f4f6;           /* texto claro */
+}
+
+body.tema-escuro #historicoMensal table {
+    background-color: #4b5563; /* fundo da tabela */
+    color: #f3f4f6;            /* texto da tabela */
+}
+
+body.tema-escuro #historicoMensal th {
+    background-color: #059669; /* cabeçalho da tabela */
+    color: #f3f4f6;            /* texto do cabeçalho */
+}
+
+body.tema-escuro #historicoMensal td {
+    color: #f3f4f6; /* texto das células */
+}
+/* Controle Mensal: fonte menor e mais legível */
+#historicoMensal {
+    font-size: 14px; /* tamanho geral da fonte */
+    font-family: 'Poppins', sans-serif; /* mesma fonte do resto, mas menor */
+}
+
+#historicoMensal table th,
+#historicoMensal table td {
+    font-size: 13px; /* diminui um pouco o texto da tabela */
+    padding: 12px;   /* mantém espaçamento adequado */
+}
+.produto-edit-info {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #d1fae5; /* modo claro */
+    color: #065f46;
+}
+
+body.tema-escuro .produto-edit-info {
+    background-color: #065f46; /* modo escuro */
+    color: #d1fae5;
+}
+#controleEntradaSaida {
+    position: relative; /* necessário para o botão ficar dentro do card */
+}
+
+.fechar-aba {
+    position: absolute;
+    top: 10px;  /* espaço do topo do card */
+    right: 10px; /* espaço da direita */
+}
+#controleEntradaSaida {
+  margin-top: 30px;
+  position: relative;
+  z-index: 1; /* fica acima da tabela sem empurrar */
+}
+.topo-wrapper {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza a logo */
+  position: relative;
+  z-index: 2;
+  background-color: #10b981;
+  color: white;
+  height: 70px; /* altura fixa para o topo */
+}
+
+/* Estilo da logo */
+.topo-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topo-logo img {
+  max-height: 80px; /* restaurar tamanho original */
+  height: auto;
+}
+
+/* Botão de menu */
+.menu-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  top: 20px;
+}
+/* 🔄 No tema escuro: remove o fundo verde */
+body.tema-escuro .topo-wrapper {
+  background-color: transparent;
+  color: inherit;
+}
+
+body.tema-escuro .menu-icon {
+  color: #f3f4f6;
+}
+/* Contêiner da barra de pesquisa alinhado à esquerda */
+.input-group.buscar-produto {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espaçamento entre label e input */
+    max-width: 400px;
+    margin: 20px 0; /* distância do topo e de outros elementos */
+}
+
+/* Label */
+.input-group.buscar-produto label {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+/* Input de pesquisa */
+.input-group.buscar-produto input[type="text"] {
+    flex: 1; /* ocupa o espaço restante */
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Foco no input */
+.input-group.buscar-produto input[type="text"]:focus {
+    border-color: #10b981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    outline: none;
+}
+
+/* Placeholder estilizado */
+.input-group.buscar-produto input[type="text"]::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Adaptação para tema escuro */
+body.tema-escuro .input-group.buscar-produto input[type="text"] {
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
+}
+
+body.tema-escuro .input-group.buscar-produto input[type="text"]::placeholder {
+    color: #d1d5db;
+}
+/* ============================= */
+/* CONTROLE DE ENTRADA E SAÍDA  */
+/* ============================= */
+
+/* Container principal */
+#controleEntradaSaida {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 25px;               /* cantos arredondados iguais ao histórico */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08); /* abaulado */
+    font-family: 'Helvetica', sans-serif;
+    transition: all 0.3s ease;
+    overflow-x: auto;                  /* rolagem horizontal se necessário */
+}
+
+/* Inputs e grupos dentro do container */
+#controleEntradaSaida .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+#controleEntradaSaida label {
+    font-weight: 600;
+    min-width: 120px;
+    color: #374151;
+    font-size: 15px;
+}
+
+#controleEntradaSaida input, 
+#controleEntradaSaida button {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#controleEntradaSaida input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+#controleEntradaSaida button {
+    background-color: #10b981;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#controleEntradaSaida button:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+}
+
+/* ============================= */
+/*           MODO ESCURO         */
+/* ============================= */
+body.tema-escuro #controleEntradaSaida {
+    background-color: #1f2937;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    color: #f3f4f6;
+}
+
+body.tema-escuro #controleEntradaSaida label {
+    color: #f3f4f6;
+}
+
+body.tema-escuro #controleEntradaSaida input {
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
+}
+
+body.tema-escuro #controleEntradaSaida input::placeholder {
+    color: #d1d5db;
+}
+
+body.tema-escuro #controleEntradaSaida button {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+body.tema-escuro #controleEntradaSaida button:hover {
+    background-color: #059669;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #controleEntradaSaida {
+        padding: 20px;
+    }
+
+    #controleEntradaSaida .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #controleEntradaSaida input, #controleEntradaSaida button {
+        width: 100%;
+    }
+}
+/* Mensagem no modo normal */
+.mensagem-registro {
+    color: #374151; /* ou outra cor para tema claro */
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Mensagem no modo escuro */
+body.tema-escuro .mensagem-registro {
+    color: #ffffff; /* texto branco no modo escuro */
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* === Novo Estilo === */
+
+/* Título estilizado */
+.titulo-principal {
+  text-align: center;
+  font-size: 2rem;
+  color: #5b6c7e;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+/* Campo de busca moderno */
+.buscar-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 25px;
+}
+
+.buscar-container input {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.buscar-container input:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.5);
+}

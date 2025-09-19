@@ -1,0 +1,144 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #eef1f7;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== TOPO ====== */
+.topbar {
+  background: #1f2937;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+}
+
+#userInfo {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ====== CONTEÚDO ====== */
+.container {
+  flex: 1;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #1f2937;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ====== FORM ====== */
+.input-group {
+  margin: 15px 0;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.input-group input, 
+.input-group select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+.input-group input:focus, 
+.input-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ====== BOTÕES ====== */
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-primary {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+.remove-btn {
+  background: #dc3545;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.85rem;
+}
+.remove-btn:hover {
+  background: #b02a37;
+}
+
+/* ====== LISTA ====== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+li {
+  background: #f9f9f9;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+li:hover {
+  background: #f1f5ff;
+}
+
+/* ====== RODAPÉ ====== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #1f2937;
+  color: #fff;
+  font-size: 0.9rem;
+}

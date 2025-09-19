@@ -1,0 +1,215 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Estilos gerais do corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8ed93 0%, #10b981 100%); /* Gradiente de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Usa min-height para garantir que o gradiente cubra toda a tela */
+    margin: 0;
+    color: #4b5563;
+    overflow: auto; /* Permite scroll se o conteúdo for maior que a tela */
+    padding: 20px; /* Espaçamento para telas menores */
+    box-sizing: border-box; /* Inclui padding na altura total */
+}
+
+/* Estilos para o card de cadastro */
+.card-cadastro {
+    width: 100%;
+    max-width: 480px; /* Aumentado para melhor visualização */
+    background-color: #ffffff;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    text-align: center;
+    overflow: hidden; /* Garante que elementos filhos respeitem o border-radius */
+}
+
+/* Cabeçalho do card */
+.card-header {
+    background-color: #f0fdf4; /* Um verde claro suave */
+    padding: 30px 20px;
+    border-bottom: 1px solid #d1fae5; /* Linha sutil */
+}
+
+.icon-cadastro {
+    font-size: 3.5rem; /* Ícone maior */
+    color: #047857; /* Um verde mais escuro */
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    color: #065f46; /* Verde escuro para o título */
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 2em; /* Título maior */
+}
+
+.card-header p {
+    color: #374151; /* Cor mais neutra para o parágrafo */
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Corpo do formulário */
+.card-body {
+    padding: 30px 40px; /* Mais padding para os campos */
+}
+
+.input-group-cadastro {
+    margin-bottom: 25px; /* Mais espaço entre os grupos de input */
+    text-align: left;
+}
+
+.input-group-cadastro label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px; /* Mais espaço entre label e input */
+    color: #374151;
+    font-size: 1.05em;
+}
+
+.input-group-cadastro label i {
+    margin-right: 8px; /* Espaço entre ícone e texto do label */
+    color: #10b981;
+}
+
+.input-group-cadastro input {
+    width: 100%;
+    padding: 14px 18px; /* Padding interno maior */
+    border: 1px solid #d1d5db;
+    border-radius: 10px; /* Bordas mais arredondadas */
+    font-size: 1.05em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group-cadastro input::placeholder {
+    color: #9ca3af; /* Cor do placeholder */
+}
+
+.input-group-cadastro input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3); /* Sombra de foco mais suave */
+}
+
+/* Botão de cadastro */
+#btnCadastrar {
+    width: 100%;
+    padding: 16px; /* Padding maior para o botão */
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 1.2em; /* Texto maior no botão */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px; /* Pequeno espaçamento entre letras */
+}
+
+#btnCadastrar:hover {
+    background-color: #059669;
+    transform: translateY(-3px); /* Efeito de levantar */
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35); /* Sombra mais forte no hover */
+}
+
+#btnCadastrar:active {
+    transform: translateY(-1px); /* Efeito de "clique" */
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+/* Rodapé do card */
+.card-footer {
+    background-color: #f9fafb; /* Fundo mais claro para o rodapé */
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.95em;
+    color: #6b7280;
+}
+
+.card-footer a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-footer a:hover {
+    color: #059669;
+    text-decoration: underline;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .card-cadastro {
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .card-header {
+        padding: 25px 15px;
+    }
+
+    .card-header h2 {
+        font-size: 1.8em;
+    }
+
+    .card-header p {
+        font-size: 1em;
+    }
+
+    .card-body {
+        padding: 25px 25px;
+    }
+
+    #btnCadastrar {
+        padding: 14px;
+        font-size: 1.1em;
+    }
+
+    .input-group-cadastro label {
+        font-size: 1em;
+    }
+
+    .input-group-cadastro input {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+    
+}
+#btnEntrar {
+    width: 100%;
+    padding: 16px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+#btnEntrar:hover {
+    background-color: #059669;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+}
+
+#btnEntrar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+@media (max-width: 600px) {
+    #btnEntrar {
+        padding: 14px;
+        font-size: 1.1em;
+    }
+}
