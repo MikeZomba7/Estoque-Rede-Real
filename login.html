@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="cadastro.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="card-cadastro">
+    <div class="card-header">
+        <i class="fas fa-sign-in-alt icon-cadastro" style="color: #3b82f6;"></i>
+        <h2>Entrar na sua conta</h2>
+        <p>Insira seus dados para continuar.</p>
+    </div>
+
+    <form id="formLogin" class="card-body">
+        <div class="input-group-cadastro">
+            <label for="emailLogin"><i class="fas fa-envelope"></i> E-mail</label>
+            <input type="email" id="emailLogin" placeholder="seu.email@exemplo.com" required>
+        </div>
+
+        <div class="input-group-cadastro">
+            <label for="senhaLogin"><i class="fas fa-lock"></i> Senha</label>
+            <input type="password" id="senhaLogin" placeholder="Sua senha" required>
+        </div>
+
+        <div class="input-group-cadastro">
+            <input type="checkbox" id="isAdmin">
+            <label for="isAdmin">Entrar como Administrador</label>
+        </div>
+
+        <button id="btnEntrar">Entrar</button>
+
+    </form>
+    <div class="card-footer">
+        Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+    </div>
+</div>
+
+<script src="cadastro.js"></script>
+
+</body>
+</html>
